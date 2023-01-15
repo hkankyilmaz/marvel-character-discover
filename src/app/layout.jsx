@@ -1,14 +1,18 @@
-import './globals.css'
+import "@/styles/reset.scss";
+import "@/styles/global.scss";
+
+import Footer from "@/components/footer/index";
+import Header from "@/components/header/index";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className="container">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
