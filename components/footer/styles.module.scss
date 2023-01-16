@@ -1,3 +1,18 @@
+@use "../../styles//variables";
+
+%footer {
+  background-color: variables.$secondary-color;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: variables.$text-l;
+}
+
 .footer {
-  background-color: red;
+  @extend %footer;
+
+  &:hover {
+    background-color: rgba(#000, 0.85);
+  }
 }

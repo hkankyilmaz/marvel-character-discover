@@ -1,3 +1,34 @@
-.footer {
-  background-color: red;
+@use "../../styles//variables";
+
+%header {
+  background-color: variables.$secondary-color;
+  color: #fff;
+  font-size: variables.$text-l;
+}
+
+.header {
+  @extend %header;
+
+  &:hover {
+    background-color: rgba(#000, 0.85);
+  }
+}
+
+.headerContent {
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: 96px;
+
+  .divOne {
+    grid-column-start: 2;
+    display: grid;
+    justify-content: start;
+    align-items: center;
+  }
+  .divTwo {
+    grid-column-start: 3;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+  }
 }
