@@ -10,7 +10,7 @@
   @extend %header;
 
   &:hover {
-    background-color: rgba(#000, 0.85);
+    background-color: rgba(#000, 0.65);
   }
 }
 
@@ -30,5 +30,25 @@
     display: grid;
     justify-content: end;
     align-items: center;
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      input {
+        padding: 1em;
+        border-radius: 0.2em;
+        display: inline-block;
+      }
+      .search {
+        position: relative;
+        right: 30px;
+        color: variables.$primary-color;
+        font-size: 1.5em;
+      }
+      .login {
+        margin-right: 0.5em;
+        font-size: 2em;
+      }
+    }
   }
 }

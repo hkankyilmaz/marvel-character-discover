@@ -3,12 +3,32 @@ import React from "react";
 import styles from "./styles.module.scss";
 import "./styles.module.scss";
 
+import { BsSearch } from "react-icons/bs";
+import { FaUserAlt } from "react-icons/fa";
+
+import Marvel from "../../src/assets/marvel";
+
+const inputProps = {
+  placeholder: "Search",
+  type: "text",
+  minLength: "3",
+  maxLength: "10",
+};
+
 function Header() {
   return (
     <div className={`${styles.header} fluid`}>
       <div className={styles.headerContent}>
-        <div className={styles.divOne}>aa</div>
-        <div className={styles.divTwo}>aa</div>
+        <div className={styles.divOne}>
+          <Marvel />{" "}
+        </div>
+        <div className={styles.divTwo}>
+          <div className={styles.wrapper}>
+            <FaUserAlt className={styles.login} />
+            <input {...inputProps} />
+            <BsSearch className={styles.search} />
+          </div>
+        </div>
       </div>
     </div>
   );
