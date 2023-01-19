@@ -9,6 +9,10 @@
   grid-column: 2;
 }
 
+.LoginLayoutContainer {
+  grid-column: 1/-1;
+}
+
 .container > .fluid {
   grid-column: 1 / -1;
 }

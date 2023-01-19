@@ -1,11 +1,20 @@
 import React from "react";
-import Banner from "../../../components/banner/index";
+import Image from "next/image";
+
+import styles from "./styles.module.scss";
+import "./styles.module.scss";
+
+import spiderman from "@/assets/photo/spiderman.jpeg";
+import thor from "@/assets/photo/thor.jpg";
+import ironman from "@/assets/photo/ironman.jpeg";
 
 function LoginLayout({ children }) {
   return (
-    <div className="login-container">
-      <div>{children}</div>
-      <Banner />
+    <div className={`${styles.LoginLayoutContainer} LoginLayoutContainer`}>
+      <div className={styles.loginLayoutChildren}>{children}</div>
+      <div className={`${styles.LoginLayoutImg}`}>
+        <Image className={styles.img} src={ironman} fill alt="" />
+      </div>
     </div>
   );
 }
