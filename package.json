@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@next/font": "13.1.2",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",

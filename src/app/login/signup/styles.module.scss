@@ -1,3 +1,5 @@
+@use "../../../../styles//variables";
+
 %mid {
   display: flex;
   justify-content: center;
@@ -24,6 +26,20 @@
       outline: 4px solid darkcyan;
     }
   }
+  .formBtn {
+    padding: 1em;
+    width: 10em;
+    margin-top: 1.5em;
+    font-weight: bold;
+    color: variables.$white;
+    background-color: variables.$secondary-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(#000, 0.5);
+      outline: 1px variables.$white solid;
+    }
+  }
 
   input:nth-of-type(1) {
     margin-bottom: 1em;
@@ -36,4 +52,12 @@
       color: #fff;
     }
   }
+}
+
+.err {
+  @extend %mid;
+
+  margin: 0.7em 0;
+  width: 400px;
+  justify-content: start;
 }
