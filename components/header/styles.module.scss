@@ -16,7 +16,7 @@
 
 .headerContent {
   display: grid;
-  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-columns: 1fr min(650px, 45%) min(650px, 45%) 1fr;
   grid-template-rows: 96px;
 
   .divOne {
@@ -30,10 +30,12 @@
     display: grid;
     justify-content: end;
     align-items: center;
+
     .wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: end;
       align-items: center;
+      transform: translateX(20px);
       input {
         padding: 1em;
         border-radius: 0.2em;

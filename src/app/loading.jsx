@@ -9,7 +9,7 @@ function Loading() {
   return (
     <div className={styles.containerLoading}>
       {" "}
-      <Marvel />{" "}
+      <Marvel class_="pulse" />{" "}
     </div>
   );
 }
