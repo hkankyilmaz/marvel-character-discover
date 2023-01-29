@@ -55,12 +55,13 @@ function SingUp() {
         name="password"
         render={({ message }) => <p className={styles.err}>{message}</p>}
       />
-      <p>
-        Back the Login <Link href="/login">Here</Link>
-      </p>
+
       <button type="submit" className={styles.formBtn}>
         Send
       </button>
+      <p>
+        Back the Login <Link href="/login">Here</Link>
+      </p>
     </form>
   );
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import styles from "./styles.module.scss";
 import "./styles.module.scss";
@@ -24,7 +25,9 @@ function Header() {
         </div>
         <div className={styles.divTwo}>
           <div className={styles.wrapper}>
-            <FaUserAlt className={styles.login} />
+            <Link href="/login">
+              <FaUserAlt className={styles.login} />
+            </Link>
             <input {...inputProps} />
             <BsSearch className={styles.search} />
           </div>
