@@ -3,6 +3,7 @@
 import React from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 
@@ -10,7 +11,12 @@ import styles from "./styles.module.scss";
 import "./styles.module.scss";
 import axios from "axios";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function SingUp() {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -25,13 +31,21 @@ function SingUp() {
         .post("http://localhost:3000/api/users/register", data)
         .catch((err) => {
           console.log(err);
+          toast.error("There ise a Problem wıth yout information...");
           setError("email", {
             type: "focus",
             message: "User already exists",
           });
         })
         .then((res) => {
-          console.log(res);
+          if (res?.status === 200) {
+            console.log(res);
+            setTimeout(() => {
+              router.push("/login");
+            }, 7000);
+
+            toast.success("User Created Succesfully, Please Login...");
+          }
         });
     } catch (error) {
       console.log(error);
@@ -81,6 +95,7 @@ function SingUp() {
       <p>
         Back the Login <Link href="/login">Here</Link>
       </p>
+      <ToastContainer position="top-center" />
     </form>
   );
 }
