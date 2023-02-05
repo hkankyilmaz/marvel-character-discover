@@ -14,17 +14,28 @@ function SingUp() {
   const {
     register,
     handleSubmit,
+    setError,
     watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    axios
-      .post("http://localhost:3000/api/users/register", data)
-      .then((res) => console.log(res))
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      axios
+        .post("http://localhost:3000/api/users/register", data)
+        .catch((err) => {
+          console.log(err);
+          setError("email", {
+            type: "focus",
+            message: "User already exists",
+          });
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <form
