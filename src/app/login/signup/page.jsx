@@ -8,6 +8,7 @@ import { ErrorMessage } from "@hookform/error-message";
 
 import styles from "./styles.module.scss";
 import "./styles.module.scss";
+import axios from "axios";
 
 function SingUp() {
   const {
@@ -17,7 +18,14 @@ function SingUp() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    axios
+      .post("http://localhost:3000/api/users/register", data)
+      .then((res) => console.log(res))
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <form
       autoComplete="off"
