@@ -24,6 +24,7 @@
     display: grid;
     justify-content: start;
     align-items: center;
+    cursor: pointer;
   }
   .divTwo {
     grid-column-start: 3;
@@ -51,6 +52,7 @@
         margin-right: 0.5em;
         font-size: 2em;
         color: variables.$white;
+        cursor: pointer;
       }
     }
   }

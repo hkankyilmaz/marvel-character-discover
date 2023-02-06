@@ -15,7 +15,7 @@ const Home = async () => {
   let offset = Math.floor(Math.random() * 100);
 
   const res = await load(offset);
-  console.log(res.data.data.results);
+  // console.log(res.data.data.results);
 
   return (
     <div className={styles.homeContainer}>

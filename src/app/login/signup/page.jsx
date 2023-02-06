@@ -31,7 +31,7 @@ function SingUp() {
         .post("http://localhost:3000/api/users/register", data)
         .catch((err) => {
           console.log(err);
-          toast.error("There ise a Problem wıth yout information...");
+          toast.error("There ise a Problem with your information...");
           setError("email", {
             type: "focus",
             message: "User already exists",
@@ -71,7 +71,9 @@ function SingUp() {
       <ErrorMessage
         errors={errors}
         name="email"
-        render={({ message }) => <p className={styles.err}>{message}</p>}
+        render={({ message }) => (
+          <p className={`${styles.err} ${styles.errUp}`}>{message}</p>
+        )}
       />
       <input
         placeholder="password"
@@ -95,7 +97,7 @@ function SingUp() {
       <p>
         Back the Login <Link href="/login">Here</Link>
       </p>
-      <ToastContainer position="top-center" />
+      <ToastContainer position="bottom-left" />
     </form>
   );
 }

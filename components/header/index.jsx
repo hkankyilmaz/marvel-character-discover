@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
@@ -6,6 +8,9 @@ import "./styles.module.scss";
 
 import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
+import { AiOutlinePoweroff } from "react-icons/ai";
+import { useRouter } from "next/navigation";
+import { useSession, signOut, getSession } from "next-auth/react";
 
 import Marvel from "../../src/assets/marvel";
 
@@ -17,17 +22,28 @@ const inputProps = {
 };
 
 function Header() {
+  const { push } = useRouter();
+  const { data: session } = useSession();
+  console.log(session);
   return (
     <div className={`${styles.header} fluid`}>
       <div className={styles.headerContent}>
-        <div className={styles.divOne}>
+        <div onClick={() => push("/")} className={styles.divOne}>
           <Marvel />{" "}
         </div>
         <div className={styles.divTwo}>
           <div className={styles.wrapper}>
-            <Link href="/login">
-              <FaUserAlt className={styles.login} />
-            </Link>
+            {session?.user ? (
+              <AiOutlinePoweroff
+                onClick={() => signOut()}
+                className={styles.login}
+              />
+            ) : (
+              <Link href="/login">
+                <FaUserAlt className={`${styles.login} ${styles.logout}`} />
+              </Link>
+            )}
+
             <input {...inputProps} />
             <BsSearch className={styles.search} />
           </div>
