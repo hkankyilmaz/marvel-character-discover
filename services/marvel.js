@@ -26,7 +26,18 @@ export const load = async (offset, params) => {
 export const fetchCharacter = async (id) => {
   try {
     const res = await axios.get(
-      `https://gateway.marvel.com:443/v1/public/characters/${id}?&apikey=${apiKey}&hash=${hash}`
+      `https://gateway.marvel.com:443/v1/public/characters/${id}?&ts=${ts}&apikey=${apiKey}&hash=${hash}`
+    );
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchComics = async (id) => {
+  try {
+    const res = await axios.get(
+      `https://gateway.marvel.com:443/v1/public/characters/${id}/comics?offset=0&limit=10?&ts=${ts}&apikey=${apiKey}&hash=${hash}`
     );
     return res;
   } catch (error) {
