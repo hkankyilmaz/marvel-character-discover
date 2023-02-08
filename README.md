@@ -1,4 +1,4 @@
-# Weather App
+# Marvel Character Discover
 
 🔸 This web app built with using [Next.js 13 Beta [app-dir]](https://nextjs.org/). <br>
 🔸 Click and see live demo... [Here](https://marvel-character-discover.vercel.app/).
