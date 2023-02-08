@@ -45,13 +45,13 @@ npm build
 
 ## 📷 Screenshot <hr>
 
-<img src="./src/screenshot/w1.png">
+<img src="./assets/photo/m1.jpg">
 <br>
 <br>
-<img src="./src/screenshot/w2.png">
+<img src="./assets/photo/m2.jpg">
 <br>
 <br>
-<img src="./src/screenshot/w3.png">
+<img src="./assets/photo/m3.jpg">
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
