@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import "./styles.module.scss";
 
-function index({ character, comics }) {
+async function index({ character, comics }) {
   return (
     <main className={styles.base}>
       <div className={`container_ ${styles.container}`}>
