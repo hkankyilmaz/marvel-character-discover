@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSession, signIn, getSession } from "next-auth/react";
 
 function Login() {
+  const [isLoading, setIsLoading] = React.useState(false);
   const { data: session } = useSession();
   console.log(session);
   const { push } = useRouter();
@@ -27,12 +28,14 @@ function Login() {
   } = useForm();
 
   const onSubmit = async (data) => {
+    setIsLoading(true);
     const { email, password } = data;
     let options = { redirect: false, email, password };
     try {
       const res = await signIn("credentials", options);
       console.log(res);
       if (res.status === 200) {
+        setIsLoading(false);
         toast.success(
           "You have successfully logged in..! You will be redirected to the home page in 7 seconds."
         );
@@ -41,6 +44,7 @@ function Login() {
         }, 7000);
       }
       if (res.status === 401 && res.error == "Incorrect password!") {
+        setIsLoading(false);
         toast.error("There is an error in the login information..!");
         setError("password", {
           type: "focus",
@@ -48,6 +52,7 @@ function Login() {
         });
       }
       if (res.status === 401 && res.error == "You haven't registered yet!") {
+        setIsLoading(false);
         toast.error("There is an error in the login information..!");
         setError("email", {
           type: "focus",
@@ -55,6 +60,7 @@ function Login() {
         });
       }
     } catch (err) {
+      setIsLoading(false);
       console.log(err);
     }
   };
@@ -96,12 +102,12 @@ function Login() {
       />
 
       <button type="submit" className={styles.formBtn}>
-        Send
+        {isLoading ? "Loading..." : "Send"}
       </button>
       <p>
         You dont have account yet. <Link href="/login/signup">Sign Up</Link>
       </p>
-      <ToastContainer position="bottom-left" />
+      <ToastContainer position="top-center" />
     </form>
   );
 }

@@ -15,6 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function SingUp() {
+  const [isLoading, setIsLoading] = React.useState(false);
   const router = useRouter();
 
   const {
@@ -26,11 +27,13 @@ function SingUp() {
   } = useForm();
 
   const onSubmit = (data) => {
+    setIsLoading(true);
     console.log(data);
     try {
       axios
         .post("http://localhost:3000/api/users/register", data)
         .catch((err) => {
+          setIsLoading(false);
           console.log(err);
           toast.error("There ise a Problem with your information...");
           setError("email", {
@@ -40,6 +43,7 @@ function SingUp() {
         })
         .then((res) => {
           if (res?.status === 200) {
+            setIsLoading(false);
             console.log(res);
             setTimeout(() => {
               router.push("/login");
@@ -49,6 +53,7 @@ function SingUp() {
           }
         });
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   };
@@ -77,6 +82,7 @@ function SingUp() {
         )}
       />
       <input
+        type="password"
         placeholder="password"
         {...register("password", {
           required: "This is required field",
@@ -93,12 +99,12 @@ function SingUp() {
       />
 
       <button type="submit" className={styles.formBtn}>
-        Send
+        {isLoading ? "Loading..." : "Send"}
       </button>
       <p>
         Back the Login <Link href="/login">Here</Link>
       </p>
-      <ToastContainer position="bottom-left" />
+      <ToastContainer position="top-center" />
     </form>
   );
 }
