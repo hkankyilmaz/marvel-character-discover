@@ -26,6 +26,7 @@ function SingUp() {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data);
     try {
       axios
         .post("http://localhost:3000/api/users/register", data)
