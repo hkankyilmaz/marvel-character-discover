@@ -12,15 +12,17 @@ async function index({ character, comics }) {
             <img
               className={`${styles.imgWrapper}`}
               src={
-                character.thumbnail.path + "." + character.thumbnail.extension
+                character?.thumbnail?.path +
+                "." +
+                character?.thumbnail?.extension
               }
             />
           </div>
           <div className={styles.description}>
-            <h1>{character.name}</h1>
+            <h1>{character?.name}</h1>
             <p>
-              {!!character.description
-                ? character.description
+              {!!character?.description
+                ? character?.description
                 : "Character's description doesn't exist."}
             </p>
           </div>
@@ -32,11 +34,13 @@ async function index({ character, comics }) {
               <div key={comic.id} className={styles.cardwrapper}>
                 <div className={styles.cardimg}>
                   <img
-                    src={comic.thumbnail.path + "." + comic.thumbnail.extension}
+                    src={
+                      comic?.thumbnail?.path + "." + comic?.thumbnail?.extension
+                    }
                   />
                 </div>
                 <div className={styles.cardtitle}>
-                  <p>{comic.title}</p>
+                  <p>{comic?.title}</p>
                 </div>
               </div>
             );
