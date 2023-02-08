@@ -1,3 +1,58 @@
+# Weather App
+
+🔸 This web app built with using [Next.js 13 Beta [app-dir]](https://nextjs.org/). <br>
+🔸 Click and see live demo... [Here](https://marvel-character-discover.vercel.app/).
+
+## 💻 Setup <br>
+
+### Install Dependencies
+
+```
+npm install
+```
+
+### Run the App in the Dev Server
+
+```
+npm run dev
+```
+
+### to Build for Production
+
+```
+npm build
+```
+
+## 🔥 Technologies and Libraries <br>
+
+✔️ Next.js <br>
+✔️ react-hook-form <br>
+✔️ react-icon <br>
+✔️ next-auth <br>
+✔️ next/router <br>
+✔️ mongoose <br>
+✔️ mangoDB <br>
+✔️ SSR-CSR <br>
+✔️ {...nextjs13features} :) <br>
+
+## 🚀 App Features <br>
+
+✔️ User can see random marvel characters on the home page <br>
+✔️ User can see detail of marvel character when click the characters card. <br>
+✔️ User can search for any character <br>
+✔️ User can register to the website <br>
+✔️ When the user logs in, he/she gets a token and is redirected automatically on his other logins.<br>
+
+## 📷 Screenshot <hr>
+
+<img src="./src/screenshot/w1.png">
+<br>
+<br>
+<img src="./src/screenshot/w2.png">
+<br>
+<br>
+<img src="./src/screenshot/w3.png">
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
