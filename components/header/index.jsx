@@ -10,6 +10,7 @@ import { BsSearch } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 import { useSession, signOut, getSession } from "next-auth/react";
 
 import Marvel from "../../src/assets/marvel";
@@ -24,7 +25,17 @@ const inputProps = {
 function Header() {
   const { push } = useRouter();
   const { data: session } = useSession();
-  console.log(session);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    push(`/result/${data.nameStartsWith}`);
+  };
+
   return (
     <div className={`${styles.header} fluid`}>
       <div className={styles.headerContent}>
@@ -43,9 +54,10 @@ function Header() {
                 <FaUserAlt className={`${styles.login} ${styles.logout}`} />
               </Link>
             )}
-
-            <input {...inputProps} />
-            <BsSearch className={styles.search} />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input {...inputProps} {...register("nameStartsWith")} />
+              <BsSearch className={styles.search} />
+            </form>
           </div>
         </div>
       </div>

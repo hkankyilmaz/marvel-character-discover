@@ -28,7 +28,6 @@ function SingUp() {
 
   const onSubmit = (data) => {
     setIsLoading(true);
-    console.log(data);
     try {
       axios
         .post("http://localhost:3000/api/users/register", data)
@@ -44,7 +43,6 @@ function SingUp() {
         .then((res) => {
           if (res?.status === 200) {
             setIsLoading(false);
-            console.log(res);
             setTimeout(() => {
               router.push("/login");
             }, 7000);

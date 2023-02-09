@@ -17,7 +17,6 @@ import { useSession, signIn, getSession } from "next-auth/react";
 function Login() {
   const [isLoading, setIsLoading] = React.useState(false);
   const { data: session } = useSession();
-  console.log(session);
   const { push } = useRouter();
   const {
     register,

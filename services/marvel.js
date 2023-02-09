@@ -7,13 +7,15 @@ let ts = new Date().getTime();
 
 let hash = md5(ts + priKey + apiKey);
 
-export const load = async (offset, params) => {
+export const load = async (offset, param) => {
   try {
     const res = await axios.get(
       `https://gateway.marvel.com:443/v1/public/characters?&ts=${ts}&limit=45&offset=${offset}&apikey=${apiKey}&hash=${hash}`,
 
       {
-        params,
+        params: {
+          nameStartsWith: param,
+        },
       }
     );
 

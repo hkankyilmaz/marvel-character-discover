@@ -9,11 +9,11 @@ import "./styles.module.scss";
 function Card({ img, id, name }) {
   return (
     <div className={styles.cardContainer}>
-      <Link href={`/${id}`}>
+      <Link href={`/character/${id}`}>
         {" "}
         <img src={img} />{" "}
       </Link>
-      <Link href={`/${id}`}>
+      <Link href={`/character/${id}`}>
         <p> {name} </p>
       </Link>
     </div>

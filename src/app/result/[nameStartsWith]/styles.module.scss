@@ -1,0 +1,21 @@
+@use "../../../../styles/variables";
+
+// Home scss
+
+.homeContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 320px;
+  gap: 1em 1em;
+  margin: 2em 0;
+  height: auto;
+}
+
+// loading scss
+
+.containerLoading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.$primary-color;
+}
