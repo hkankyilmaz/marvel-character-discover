@@ -30,7 +30,7 @@ function SingUp() {
     setIsLoading(true);
     try {
       axios
-        .post("http://localhost:3000/api/users/register", data)
+        .post(`${process.env.NEXT_PUBLIC_BASE_URI}/api/users/register`, data)
         .catch((err) => {
           setIsLoading(false);
           console.log(err);
