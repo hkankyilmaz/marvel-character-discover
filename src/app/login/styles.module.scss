@@ -21,6 +21,16 @@
   }
 }
 
+@media (max-width: 1000px) {
+  .loginLayoutChildren {
+    width: 100%;
+    height: 100%;
+  }
+  .LoginLayoutImg {
+    display: none;
+  }
+}
+
 // login page scss
 
 %mid {
@@ -87,4 +97,12 @@
 
 .errUp {
   margin-top: 0 !important;
+}
+
+@media (max-width: 1000px) {
+  .formContainer {
+    input {
+      width: 22em !important;
+    }
+  }
 }
