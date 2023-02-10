@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Link from "next/link";
 
@@ -13,7 +12,7 @@ function Movie404() {
         flexDirection: "column",
       }}
     >
-      <h1>An error has occurred. Sorry for that! </h1>
+      <h1>We couldn&apos;t find the characters you looking for!</h1>
       <Link
         href="/"
         style={{ textDecoration: "underline", fontSize: 20, marginTop: 8 }}
