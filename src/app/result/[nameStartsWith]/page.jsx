@@ -1,4 +1,5 @@
 import React from "react";
+import { notFound } from "next/navigation";
 
 import styles from "./styles.module.scss";
 import "./styles.module.scss";
@@ -10,6 +11,7 @@ const Home = async ({ params }) => {
   let offset = 1;
 
   const res = await load(offset, params.nameStartsWith);
+  if (res.data.data.results == []) notFound();
 
   return (
     <div className={styles.homeContainer}>
