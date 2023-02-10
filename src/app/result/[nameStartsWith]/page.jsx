@@ -11,6 +11,7 @@ const Home = async ({ params }) => {
   let offset = 1;
 
   const res = await load(offset, params.nameStartsWith);
+  console.log(res.data.data.results);
   if (res.data.data.results == []) notFound();
 
   return (
