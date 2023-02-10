@@ -29,11 +29,13 @@ function Header() {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     push(`/result/${data.nameStartsWith}`);
+    //reset();
   };
 
   return (
@@ -56,7 +58,9 @@ function Header() {
             )}
             <form onSubmit={handleSubmit(onSubmit)}>
               <input {...inputProps} {...register("nameStartsWith")} />
-              <BsSearch className={styles.search} />
+              <button type="submit" className={styles.btn}>
+                <BsSearch className={styles.search} />
+              </button>
             </form>
           </div>
         </div>

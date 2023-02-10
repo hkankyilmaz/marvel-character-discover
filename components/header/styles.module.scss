@@ -62,6 +62,17 @@
   }
 }
 
+.btn {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 35px;
+  right: 0px;
+  top: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 @media (max-width: 450px) {
   .header {
     font-size: 14px;
@@ -73,5 +84,8 @@
   .search {
     right: 20px !important;
     top: 8px !important;
+  }
+  .btn {
+    top: 2px;
   }
 }

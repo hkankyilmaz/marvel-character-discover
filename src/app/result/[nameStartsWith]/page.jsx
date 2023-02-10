@@ -12,7 +12,7 @@ const Home = async ({ params }) => {
 
   const res = await load(offset, params.nameStartsWith);
   console.log(res.data.data.results);
-  if (res.data.data.results == []) notFound();
+  if (res.data.data.results.length == 0) notFound();
 
   return (
     <div className={styles.homeContainer}>

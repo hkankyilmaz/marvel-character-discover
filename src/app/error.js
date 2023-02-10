@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 
-function M404() {
+function Movie404() {
   return (
     <div
       style={{
@@ -13,7 +14,7 @@ function M404() {
         flexDirection: "column",
       }}
     >
-      <h1>We couldn&apos;t find the characters you looking for!</h1>
+      <h1>An error has occurred. Sorry for that! </h1>
       <Link
         href="/"
         style={{
@@ -29,4 +30,4 @@ function M404() {
   );
 }
 
-export default M404;
+export default Movie404;
