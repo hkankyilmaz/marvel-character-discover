@@ -1,7 +1,7 @@
 # Marvel Character Discover
 
 🔸 This web app built with using [Next.js-13](https://nextjs.org/) Beta app-dir . <br>
-🔸 Click and see live demo... [Here](https://marvel-character-discover.vercel.app/).
+
 
 ## 💻 Setup <br>
 
